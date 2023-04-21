@@ -50,7 +50,7 @@ public class TriangleNumber {
         boolean cont = true;
         while (cont) {
             System.out.println("\nWhich operation you would like to do: \n1) sum (+), \n2) subtraction (-), " +
-                    "\n3) devision (/), \n4) multiply (*).\nTo exit enter 0");
+                    "\n3) division (/), \n4) multiply (*).\nTo exit enter 0");
             int operation = in.nextInt();
             int firstNum,secondNum;
             switch (operation) {
