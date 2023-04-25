@@ -22,13 +22,7 @@ public class WorkWithString {
 
     static void printText(List<String> fileData){
         StringBuilder sb = new StringBuilder();
-        fileData.forEach((data)-> sb.append(data.toString()
-                .replaceAll("[{\"}]", "")
-                .replace("[", "")
-                .replace("]", "")
-                .replace("фамилия:", "Студент ")
-                .replace(",оценка:", " получил ")
-                .replace(",предмет:", " по предмету ")+"\n"
+        fileData.forEach((data)-> sb.append(PrintLine(data.toString()) +"\n"
         ));
         System.out.println(sb.toString());
     }
