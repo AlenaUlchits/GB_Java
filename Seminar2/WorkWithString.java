@@ -2,10 +2,10 @@ package Seminar2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
 public class WorkWithString {
     public static void main(String[] args) throws Exception {
@@ -34,13 +34,22 @@ public class WorkWithString {
         System.out.println(sb.toString());
     }
     static List<String> readFileAndParse(String path) throws Exception{
-        BufferedReader reader = new BufferedReader(new FileReader(path));
+        Logger logger = Logger.getLogger(WorkWithString.class.getName());
+        FileHandler fh = new FileHandler("log.txt");
+        logger.addHandler(fh);
         List<String> fileData = new ArrayList<>();
-        String str;
-        while ((str = reader.readLine()) != null){
-            fileData.add(str);
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(path));
+
+            String str;
+            while ((str = reader.readLine()) != null) {
+                fileData.add(str);
+            }
+            reader.close();
+            logger.info("File data were transformed");
+        }catch (Exception e){
+            logger.info("Not possible to read a file");
         }
-        reader.close();
         return fileData;
     }
 
