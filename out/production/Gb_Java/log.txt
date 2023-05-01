@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2023-04-27T17:52:40.387990800Z</date>
-  <millis>1682617960387</millis>
-  <nanos>990800</nanos>
+  <date>2023-05-01T07:02:29.018924200Z</date>
+  <millis>1682924549018</millis>
+  <nanos>924200</nanos>
   <sequence>0</sequence>
   <logger>Seminar2.WorkWithString</logger>
   <level>INFO</level>
