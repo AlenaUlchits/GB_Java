@@ -6,7 +6,7 @@ import java.util.ListIterator;
 import java.util.Random;
 
 public class WorkWithLinkedList {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         LinkedList<Integer> originalList = fillList();
         System.out.println("Task 1\n");
         printArray(originalList);
