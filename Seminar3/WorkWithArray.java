@@ -1,6 +1,8 @@
 package Seminar3;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class WorkWithArray {
     public static void main(String[] args){
@@ -22,14 +24,10 @@ public class WorkWithArray {
     }
 
     static void task1(List<Integer> numbers){
-        List<Integer> numbersToRemove = new ArrayList<>();
-        for(Integer num : numbers){
-            if(num % 2 == 0){
-                numbersToRemove.add(num);
+        for(int i = 0; i < numbers.size(); i++){
+            if(numbers.get(i) % 2 == 0){
+                numbers.remove(i);
             }
-        }
-        for(Integer num : numbersToRemove){
-            numbers.remove(num);
         }
         printArray(numbers);
     }
@@ -47,12 +45,6 @@ public class WorkWithArray {
         min = Collections.min(numbers);
         for(Integer num : numbers){
             sum += num;
-          /*  if(max < num){
-                max = num;
-            }
-            if(min > num){
-                min = num;
-            }*/
         }
         float average = (float)sum/numbers.size();
 
@@ -63,6 +55,12 @@ public class WorkWithArray {
         String[] planets = {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune",  "Jupiter", "Saturn",
                 "Venus", "Earth","Venus", "Earth"};
         List<String> planetsList = Arrays.asList(planets);
+        for(int i = 0; i < planetsList.stream().distinct().collect(Collectors.toList()).size(); i++){
+            System.out.println(planetsList.get(i) + " -> " +Collections.frequency(planetsList, planetsList.get(i)));
+        }
+
+        /* planetsList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).
+                entrySet().stream().forEach(e -> System.out.println(e.getKey() + " -> " + e.getValue()));
         Map<String, Integer> planetMap = new HashMap<>();
         String planet;
         int count;
@@ -76,7 +74,7 @@ public class WorkWithArray {
             }
             planetMap.put(planet, count);
         }
-        printMap(planetMap);
+        printMap(planetMap);*/
 
     }
     static void printMap(Map<String, Integer> planets){
