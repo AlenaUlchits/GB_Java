@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-05T16:36:56.598944700Z</date>
+  <millis>1683304616598</millis>
+  <nanos>944700</nanos>
+  <sequence>0</sequence>
+  <logger>Seminar5.WorkWithMap</logger>
+  <level>INFO</level>
+  <class>Seminar5.WorkWithMap</class>
+  <method>readFileAndParse</method>
+  <thread>1</thread>
+  <message>File data were transformed</message>
+</record>
+</log>
