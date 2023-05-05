@@ -1,7 +1,5 @@
 package Seminar5;
 
-import Seminar2.WorkWithString;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
